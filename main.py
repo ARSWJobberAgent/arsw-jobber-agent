@@ -46,7 +46,7 @@ async def oauth_callback(request: Request):
         "client_secret": JOBBER_CLIENT_SECRET,
         "redirect_uri": JOBBER_REDIRECT_URI,
     }  
-    async with httpx.AsynceClient() as client:
+    async with httpx.AsyncClient() as client:
         response = await client.post(
             "https://api.getjobber.com/api/oauth/token",
             data=token_data,
